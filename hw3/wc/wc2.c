@@ -1,6 +1,6 @@
 /*
     Author: Robert Crocombe
-    Class: CS352 Summer 04 
+    Class: CS352 Summer 04
     Assignment: HW3
 
     This is a re-implementation of the standard Unix-alike 'wc'
@@ -64,7 +64,7 @@ wc
     int in_word = 0;
     char buffer[LINE_SIZE];
 
-    /* Read in text a line at a time */ 
+    /* Read in text a line at a time */
     size_t bytes_read = fread(buffer, 1, LINE_SIZE, file);
     do
     {
@@ -80,7 +80,7 @@ wc
 
             if ( feof(file) )
             {
-                quit = 1;        
+                quit = 1;
             }
         }
 
@@ -127,7 +127,7 @@ wc
         bytes_read = fread(buffer, 1, LINE_SIZE, file);
     } while (!quit);
 
-    return 0;    
+    return 0;
 }
 
 /*!
@@ -169,7 +169,7 @@ main
     ret = lstat(argv[1], &info);
     if (ret == -1)
     {
-       fprintf(stderr, "%s: no such file or directory\n", argv[1]); 
+       fprintf(stderr, "%s: no such file or directory\n", argv[1]);
        exit(ERR_FILE_ERR);
     }
 

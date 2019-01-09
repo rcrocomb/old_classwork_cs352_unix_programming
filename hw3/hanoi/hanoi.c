@@ -47,7 +47,7 @@ hanoi(const unsigned int n, const char src, const char dest, const char aux)
     if (n > 0)
     {
         hanoi( n - 1, src, aux, dest);
-        printf("%c %c\n", src, dest); 
+        printf("%c %c\n", src, dest);
         hanoi( n - 1, aux, dest, src);
     }
 }
@@ -76,7 +76,7 @@ main
         printf("Invalid user input. Exiting.\n");
         exit(1);
     }
-    
+
     /* Test for range violations */
     if ( (n < MIN) || (n > MAX) )
     {

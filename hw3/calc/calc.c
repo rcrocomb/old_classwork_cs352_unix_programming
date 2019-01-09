@@ -181,7 +181,7 @@ assign(unsigned char assign_to[], const unsigned char assign_from[])
 
 /*
     returns 1 if a < b, else 0 (>=).
- 
+
    Kinda chaotic, but it seemed easiest to think of comparison this way.
    Plus it should be fast, and it can be used *a lot*.
 */
@@ -491,7 +491,7 @@ op_mult
     unsigned char small_mult[MAX_SIZE];
     unsigned char interim[MAX_SIZE];
     unsigned int i; /* Okay unless we have > 4^32 digit numbers (x86) :) */
-    
+
     /* Use this to deal with multiplication by 1 when num2 is 1 and num1 isn't:
      * a stupid asymmetry of mine I'm not going to fix: it's right, just slow.*/
     assign(plus_result, num1);
@@ -521,10 +521,10 @@ op_mult
                     /* Multiply the shifted version of num1 by the
                      * current digit of num2: e.g. for 46 * 12 we
                      * have:
-                     * 
+                     *
                      * iteration1 == (46 * 2) = 92
                      * (92 + 0 -> counter) == 92
-                     * interim now becomes 460 
+                     * interim now becomes 460
                      * iteration2 == (460 * 1) == 460
                      * (460 + 92 -> counter) == 552
                      * answer == 552
@@ -567,12 +567,12 @@ op_mult
                 {
                     status = op_plus(num1, interim, plus_result);
                     assign(interim, plus_result);
-    
+
                     if ( status < ERR_OK )
                     {
                         break;
                     }
-    
+
                     increment(counter);
                 }
 
@@ -627,7 +627,7 @@ op_div
         /* Perform division by repeated subtraction */
         while ( !less_than(num1, num2) )
         {
-            status = op_minus(num1, num2, minus_result);        
+            status = op_minus(num1, num2, minus_result);
             assign(num1, minus_result);
 
             if ( status < ERR_OK )
@@ -684,7 +684,7 @@ op_fact
         /* Compute factorial by repeated multiplication: shock! */
         while ( !less_than(counter, ONE_ARRAY))
         {
-            status = op_mult(counter, interim, mult_result);        
+            status = op_mult(counter, interim, mult_result);
             assign(interim, mult_result);
 
             if ( status < ERR_OK )
