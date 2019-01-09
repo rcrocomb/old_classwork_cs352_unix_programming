@@ -98,7 +98,7 @@ year_to_days( const year_t year )
 }
 
 /*
-    Returns TRUE if the year "year" is a leap year, or "FALSE" if "year" is 
+    Returns TRUE if the year "year" is a leap year, or "FALSE" if "year" is
     not a leap year.
 
     I think the logic comes out to be self explanatory by the time you get
@@ -157,7 +157,7 @@ leap_years
     centuries = (year2_century - year1_next_century) / YEARS_PER_CENTURY;
     centuries;
     printf("Years == %4u Centuries == %4u\n", years, centuries);
-   
+
     printf("From %4u to %4u\n", i, year1_next_century);
 
     /* <= 100 iterations */
@@ -176,10 +176,10 @@ leap_years
         int value = 0;
         for (i = year1_next_century; i < year2_century; i += YEARS_PER_CENTURY)
         {
-            value += LEAP_YEARS_PER_CENTURY; 
+            value += LEAP_YEARS_PER_CENTURY;
             if ( (i % 400) != 0)
             {
-                --value; 
+                --value;
             }
         }
         leaps += value;
@@ -261,8 +261,8 @@ leap_years
 
         printf("After century check: remaining years is %4u -- start is %4u\n", years, i);
 
-    } 
-    
+    }
+
     if (years > YEARS_PER_LEAP)
     {
         int found = 0;
@@ -374,7 +374,7 @@ delta_year_month_day
     {
         *year1 = *month1 = *day1 = 0;
         return;
-    } 
+    }
 
     /* Now fix any negative values by rejiggering days and months to + values */
 
@@ -512,7 +512,7 @@ main
             printf("Failure: %04u-%02u-%02u | %04u-%02u-%02u\n",
                    year1, month1, day1, year2, month2, day2);
             exit(0);
-        } else 
+        } else
         {
             gimme_numbers(year1, month1, day1, year2, month2, day2);
         }
